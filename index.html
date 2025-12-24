@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Natal - Minha Colagem</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <style>
+        /* 1. O Palco (Fundo) */
+        body {
+            /* Troque o background-color por isso: */
+            background: radial-gradient(circle, #652b2b 0%, #1f0b0bfa 100%);
+            
+            /* Mantenha o resto igual: */
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            font-family: 'Pacifico', cursive;
+        }
+
+        @keyframes brilho-neon {
+            0%, 100% { text-shadow: 0 0 10px #f1c40f, 0 0 20px #f1c40f, 0 0 30px #e67e22; }
+            50% { text-shadow: 0 0 20px #f1c40f, 0 0 40px #f1c40f, 0 0 60px #e67e22; }
+        }
+        /* 2. O Texto Central (A Estrela) */
+        .texto-centro {
+            color: #f1cf0f; 
+            font-size: 3rem;
+            z-index: 100;
+            text-shadow: 0 0 20px rgba(245, 224, 140, 0.932);
+            pointer-events: none;
+            
+            /* --- MUDANÇAS AQUI --- */
+            
+            /* 1. Libera o texto para mover (Senão ele fica preso no centro) */
+            position: absolute; 
+
+            /* 2. A Posição (Brinque com esses números) */
+            top: -2%;  /* Distância do topo */
+            left: 4%; /* Distância da esquerda */
+
+            /* 3. A Inclinação */
+            transform: rotate(-15deg); /* Valor negativo inclina para cima/esquerda */
+            
+            /* Dica Extra: Garante que o texto não quebre linha se ficar perto da borda */
+            white-space: nowrap; 
+            animation: brilho-neon 2s infinite alternate;
+        }
+
+        /* 3. Classe Geral para os Itens da Colagem */
+        .item {
+            position: absolute;
+            transition: all 0.4s ease;
+        }
+
+        .item:hover {
+            transform: scale(1.1) rotate(5deg); /* Movimento ao passar o mouse */
+            z-index: 50; /* Traz para frente ao passar o mouse */
+            cursor: pointer;
+        }
+
+        /* --- POSICIONAMENTO DOS ELEMENTOS --- */
+
+        /* Vídeo (YouTube/Vimeo) - Canto Inferior Esquerdo */
+        .video-frame {
+            top: 26%;
+            left: 7%;
+            width: 300px;
+            height: 180px;
+            border: 5px solid #fff; /* Moldura branca tipo foto */
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+            border-bottom: 30px solid white; /* Borda de baixo mais grossa (estilo Polaroid) */
+            box-shadow: 10px 10px 20px rgba(0,0,0,0.6); /* Sombra forte */
+            transition: transform 0.3s; /* Para o hover funcionar suave */
+        }
+
+        /* O GIF - Canto Inferior Direito */
+        .meu-gif {
+            top: 5%;
+            left: 59%;
+            width: 200px;
+        }
+
+        /* Vetor 1 - Canto Superior Esquerdo */
+        .vetor-1 {
+            bottom: 0%;
+            left: 0%;
+            width: 250px;
+           /* transform: rotate(-15deg); */
+        }
+
+        /* Vetor 2 - Canto Superior Direito */
+        .vetor-2 {
+            bottom: 0%;
+            right: 0%;
+            width: 250px;
+            /*transform: rotate(10deg);*/
+        }
+
+        /* Vetor 3 - Flutuando perto do meio na esquerda */
+        .vetor-3 {
+            top: -2%;
+            left: 16%;
+            width: 200px;
+        }
+
+        /* Vetor 4 - Flutuando perto do meio na direita */
+        .vetor-4 {
+            bottom: 0%;
+            right: 20%;
+            width: 800px;
+        }
+
+        
+    </style>
+</head>
+<body>
+
+    <h1 class="texto-centro">Feliz anal</h1>
+
+    <iframe class="item video-frame" 
+            src="https://www.youtube.com/embed/8UTe3I9ZD9w?si=UI7ZYxq8eKpnoXkh" 
+            title="Video Player" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+    </iframe>
+
+    <img src="/home/isaac-medeiros/Documentos/merry_christimans/imagens/estrelinha.gif" class="item meu-gif" alt="GIF Animado">
+
+    <img src="/home/isaac-medeiros/Documentos/merry_christimans/imagens/1.png" class="item vetor-1" alt="Decoracao 1">
+    <img src="/home/isaac-medeiros/Documentos/merry_christimans/imagens/1.1.png" class="item vetor-2" alt="Decoracao 2">
+    <img src="/home/isaac-medeiros/Documentos/merry_christimans/imagens/3.png" class="item vetor-3" alt="Decoracao 3">
+    <img src="/home/isaac-medeiros/Documentos/merry_christimans/imagens/4.png" class="item vetor-4" alt="Decoracao 4">
+
+</body>
+</html>
